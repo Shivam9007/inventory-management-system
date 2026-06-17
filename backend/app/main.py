@@ -113,12 +113,12 @@ total = product.price * order.quantity
 
 product.stock_quantity -= order.quantity
 
-    db_order = Order(
-        customer_id=order.customer_id,
-        product_id=order.product_id,
-        quantity=order.quantity,
-        total_price=total,
-    )
+db_order = Order(
+    customer_id=order.customer_id,
+    product_id=order.product_id,
+    quantity=order.quantity,
+    total_price=total,
+)
 
     db.add(db_order)
     db.commit()
